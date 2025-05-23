@@ -4,3 +4,73 @@ D:\Robot_Framework_Test\Test001>docker build -t robot:V01 .
 
 #remote 執行
 docker run -it --rm robot:V01 bash
+
+
+
+
+…or create a new repository on the command line
+echo "# Robot_Test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Eugene-QIU/Robot_Test.git
+git push -u origin main
+
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/Eugene-QIU/Robot_Test.git
+git branch -M main
+git push -u origin main
+
+
+
+
+# Submodule
+
+git submodule add https://github.com/Eugene-QIU/Robot_Test.git submodules/Sub_Robot
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ git submodule add https://github.com/Eugene-QIU/Robot_Test.git submodules/Sub_Robot
+Cloning into 'D:/Robot_Framework_Test/Test001/submodules/Sub_Robot'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 9 (delta 0), reused 9 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (9/9), done.
+warning: in the working copy of '.gitmodules', LF will be replaced by CRLF the next time Git touches it
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ git submodule update --init --recursive
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ ls
+Dockerfile  Note.txt  Python_Keyword.py  __pycache__/  log.html  output.xml  report.html  requirement.txt  robot_test_features.robot  run.sh*  submodules/
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ cd submodules/Sub_Robot/
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001/submodules/Sub_Robot (main)
+$ ls
+Dockerfile  Note.txt  Python_Keyword.py  requirement.txt  robot_test_features.robot  run.sh*
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001/submodules/Sub_Robot (main)
+$ git pull origin main
+From https://github.com/Eugene-QIU/Robot_Test
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001/submodules/Sub_Robot (main)
+$ cd ../..
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ git add submodules/Sub_Robot
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ git commit -m "Update submodule to latest"
+[main 488fde3] Update submodule to latest
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .gitmodules
+ create mode 160000 submodules/Sub_Robot
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
