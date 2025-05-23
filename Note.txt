@@ -74,3 +74,73 @@ $ git commit -m "Update submodule to latest"
  create mode 160000 submodules/Sub_Robot
 
 deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+
+
+# =========== 先更新sub module 回到main去推 
+
+
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001/submodules/Sub_Robot (main)
+$ git commit -am "Add test item"
+[main 981f3b7] Add test item
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001/submodules/Sub_Robot (main)
+$ git push origin main
+To https://github.com/Eugene-QIU/Robot_Test.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Eugene-QIU/Robot_Test.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001/submodules/Sub_Robot (main)
+$ cd ../..
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Note.txt
+        modified:   submodules/Sub_Robot (new commits)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ git add submodules/Sub_Robot/
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ git commit -am "update submodle"
+[main bbcd81c] update submodle
+ 2 files changed, 72 insertions(+), 2 deletions(-)
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 1.17 KiB | 1.17 MiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Eugene-QIU/Robot_Test.git
+   488fde3..bbcd81c  main -> main
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ gitk
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001 (main)
+$ cd submodules/Sub_Robot/
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001/submodules/Sub_Robot (main)
+$ gitk
+
+deuge@DESKTOP-RP3KSKF MINGW64 /d/Robot_Framework_Test/Test001/submodules/Sub_Robot (main)
+$
+
