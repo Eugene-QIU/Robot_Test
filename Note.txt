@@ -1,0 +1,6 @@
+#Build Code 方式 <docker build -t 名稱:版號tag .>
+D:\Robot_Framework_Test\Test001>docker build -t robot:V01 .
+
+
+#remote 執行
+docker run -it --rm robot:V01 bash

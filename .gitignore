@@ -1,0 +1,9 @@
+# .gitignore
+__pycache__/
+*.log
+*.pyc
+*.tmp
+output.xml
+log.html
+report.html
+results/
